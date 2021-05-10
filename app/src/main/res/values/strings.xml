@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TMobile</string>
+
+    <!-- MAIN ACTIVITY LABELS -->
+    <string name="retryButtonLabel">Retry</string>
+
+    <!-- ERROR LABELS -->
+    <string name="errorNoNetwork">No network available</string>
+
+</resources>
