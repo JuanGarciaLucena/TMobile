@@ -1,12 +1,11 @@
-package com.juanlucena.tmobile.data.repository
+package com.juanlucena.marveldatamodule.repository
 
-import com.juanlucena.tmobile.data.network.ApiClientProvider
-import com.juanlucena.tmobile.data.services.MarvelService
+import com.juanlucena.marveldatamodule.network.ApiClientProvider
+import com.juanlucena.marveldatamodule.services.MarvelService
 
 class MarvelRepositoryImpl: MarvelRepositoryInterface {
 
     private val marvelService: MarvelService = ApiClientProvider.buildMarvelService()
-
 
     override suspend fun getCharacters(offset: Int) = marvelService.getCharacters(offset)
 

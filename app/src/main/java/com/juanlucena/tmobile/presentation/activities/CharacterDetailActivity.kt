@@ -14,7 +14,7 @@ import com.bumptech.glide.Glide
 import com.google.gson.JsonObject
 import com.juanlucena.tmobile.R
 import com.juanlucena.tmobile.common.Utils
-import com.juanlucena.tmobile.data.models.MarvelCharacterDetailsResponse
+import com.juanlucena.marveldatamodule.models.MarvelCharacterDetailsResponse
 import com.juanlucena.tmobile.viewModels.MarvelViewModel
 
 class CharacterDetailActivity : AppCompatActivity() {

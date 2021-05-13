@@ -1,8 +1,7 @@
-package com.juanlucena.tmobile.data.services
+package com.juanlucena.marveldatamodule.services
 
-import com.google.gson.JsonObject
-import com.juanlucena.tmobile.data.models.MarvelCharacterDetailsResponse
-import com.juanlucena.tmobile.data.models.MarvelCharacterListResponse
+import com.juanlucena.marveldatamodule.models.MarvelCharacterDetailsResponse
+import com.juanlucena.marveldatamodule.models.MarvelCharacterListResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

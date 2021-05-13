@@ -1,4 +1,4 @@
-package com.juanlucena.tmobile.data.interceptors
+package com.juanlucena.marveldatamodule.interceptors
 
 import okhttp3.Interceptor
 import okhttp3.Response

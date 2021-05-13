@@ -1,4 +1,4 @@
-package com.juanlucena.tmobile.data.models
+package com.juanlucena.marveldatamodule.models
 
 import com.google.gson.annotations.SerializedName
 

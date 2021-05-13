@@ -1,9 +1,9 @@
-package com.juanlucena.tmobile.data.network
+package com.juanlucena.marveldatamodule.network
 
-import com.juanlucena.tmobile.data.interceptors.MarvelInterceptor
+import com.juanlucena.marveldatamodule.BuildConfig
+import com.juanlucena.marveldatamodule.interceptors.MarvelInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
-import org.koin.android.BuildConfig
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

@@ -15,15 +15,16 @@ import com.google.gson.JsonObject
 import com.juanlucena.tmobile.R
 import com.juanlucena.tmobile.common.Constants.Companion.CHARACTER_ID
 import com.juanlucena.tmobile.common.Utils
-import com.juanlucena.tmobile.data.models.MarvelCharacter
-import com.juanlucena.tmobile.data.models.MarvelCharacterListResponse
+import com.juanlucena.marveldatamodule.models.MarvelCharacter
+import com.juanlucena.marveldatamodule.models.MarvelCharacterListResponse
 import com.juanlucena.tmobile.presentation.adapters.CharactersAdapter
 import com.juanlucena.tmobile.viewModels.MarvelViewModel
+import org.koin.android.ext.android.inject
 
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var marvelViewModel: MarvelViewModel
+    //private lateinit var marvelViewModel: MarvelViewModel
     private lateinit var progressBar: ProgressBar
     private lateinit var characterRecyclerView: RecyclerView
     private lateinit var viewManager: GridLayoutManager
@@ -31,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
     private var offset = 0
     private var marvelCharacterList = ArrayList<MarvelCharacter>()
+
+    val marvelViewModel by inject<MarvelViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,7 +52,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViewModel(){
-        marvelViewModel = ViewModelProvider(this).get(MarvelViewModel::class.java)
         marvelViewModel.getCharactersSuccessLiveData().observe(this, getCharactersSuccess())
         marvelViewModel.getCharactersFailureLiveData().observe(this, getCharactersFailure())
 

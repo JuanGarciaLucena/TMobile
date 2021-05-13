@@ -3,17 +3,15 @@ package com.juanlucena.tmobile.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.google.gson.Gson
 import com.google.gson.JsonObject
-import com.juanlucena.tmobile.data.models.MarvelCharacterDetailsResponse
-import com.juanlucena.tmobile.data.models.MarvelCharacterListResponse
-import com.juanlucena.tmobile.data.repository.MarvelRepositoryImpl
+import com.juanlucena.marveldatamodule.models.MarvelCharacterDetailsResponse
+import com.juanlucena.marveldatamodule.models.MarvelCharacterListResponse
+import com.juanlucena.marveldatamodule.repository.MarvelRepositoryImpl
 import kotlinx.coroutines.*
 
 class MarvelViewModel: ViewModel() {
-
-    private val job = Job()
-    private val coroutineScope = CoroutineScope(Dispatchers.IO + job)
 
     private val marvelRepository = MarvelRepositoryImpl()
 
@@ -34,7 +32,7 @@ class MarvelViewModel: ViewModel() {
         get() = _getCharacterDetailFailureLiveData
 
     fun getCharacters(offset: Int){
-        coroutineScope.launch {
+        viewModelScope.launch {
             val charactersResponse = marvelRepository.getCharacters(offset)
             withContext(Dispatchers.Main){
                 if(charactersResponse.isSuccessful){
@@ -47,7 +45,7 @@ class MarvelViewModel: ViewModel() {
     }
 
     fun getCharacterDetail(characterId: String){
-        coroutineScope.launch {
+        viewModelScope.launch {
             val characterDetailResponse = marvelRepository.getCharacterDetail(characterId)
             withContext(Dispatchers.Main){
                 if(characterDetailResponse.isSuccessful){

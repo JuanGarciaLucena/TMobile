@@ -1,2 +1,5 @@
+include ':marveldatamodule'
+include ':app:marveldatamodule'
 include ':app'
+project(':marveldatamodule').projectDir = new File(rootDir, 'app/marveldatamodule/')
 rootProject.name = "TMobile"
